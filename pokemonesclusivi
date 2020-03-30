@@ -1,0 +1,1059 @@
+<script>
+	function showall() {
+		var poketype = document.getElementsByTagName("span");
+		for (var i = 0; i < poketype.length; i ++) {
+			poketype[i].style.display = 'inline';
+		}
+	}
+	function hideall() {
+		var poketype = document.getElementsByTagName("span");
+		for (var i = 0; i < poketype.length; i ++) {
+			poketype[i].style.display = 'none';
+			poketype[i].style.opacity = 1;
+		}
+	}
+	function show(type) {
+		var poketype = document.getElementsByClassName(type);
+		for (var i = 0; i < poketype.length; i ++) {
+			poketype[i].style.display = 'inline';
+			if (type == "category-Tutti") {
+				poketype[i].style.opacity = .5;
+			}
+		}
+	}
+	function change() {
+		hideall();
+		var type = document.getElementById("type");
+		var category = document.getElementById("category");
+		//var background = document.getElementById("background");
+		if (type.value == "" && category.value == "" /*&& background.value == ""*/) {
+			showall();
+		} else {
+			classes = ""
+			if (type.value != "") {
+				classes += type.value + " ";
+			}
+			if (category.value != "") {
+				classes += category.value + " ";
+				show("category-Tutti")
+			}
+			/*if (background.value != "") {
+				classes += background.value + " ";
+				show("category-Tutti")
+			}*/
+			show(classes)
+		}
+	}
+	window.addEventListener("load", function(){
+	})</script>
+<select id="type" onchange="change()">
+  <option value=""></option>
+  <option value="type-poison">Veleno</option>
+  <option value="type-grass">Erba</option>
+  <option value="type-flying">Volante</option>
+  <option value="type-normal">Normale</option>
+  <option value="type-fire">Fuoco</option>
+  <option value="type-water">Acqua</option>
+  <option value="type-ice">Ghiaccio</option>
+  <option value="type-fairy">Folletto</option>
+  <option value="type-electric">Elettro</option>
+  <option value="type-rock">Roccia</option>
+  <option value="type-ground">Terra</option>
+  <option value="type-ghost">Spettro</option>
+  <option value="type-dragon">Drago</option>
+  <option value="type-dark">Buio</option>
+  <option value="type-psychic">Psico</option>
+  <option value="type-bug">Coleottero</option>
+  <option value="type-steel">Acciaio</option>
+  <option value="type-fighting">Lotta</option>
+</select>
+<select id="category" onchange="change()">
+  <option value=""></option>
+  <option value="category-Allenatore">Fantallenatore</option>
+  <option value="category-Criminale">Delinquente</option>
+  <option value="category-Pokefan">Pokéfanatico</option>
+  <option value="category-Scoprirovine">Scoprirovine</option>
+  <option value="category-Allevapokemon">Allevapokémon</option>
+  <option value="category-Scienziato">Scienziato</option>
+  <option value="category-Agente">Agente</option>
+  <option value="category-Idealista">Idealista</option>
+  <option value="category-Tutti">Tutti</option>
+</select>
+<!--<select id="background" onchange="change()">
+  <option value=""></option>
+  <option value="background-Inizio">Inizio</option>
+  <option value="background-Reduce">Reduce</option>
+</select>-->
+<br>
+<span class="type-poison type-grass category-Allenatore category-Criminale background-Inizio"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur" title="Bulbasaur"></span>
+<span class="type-poison type-grass category-Allenatore background-Reduce"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="Ivysaur" title="Ivysaur"></span>
+<span class="type-poison type-grass category-Allenatore background-Reduce"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" alt="Venusaur" title="Venusaur"></span>
+<span class="type-fire category-Allenatore category-Criminale background-Inizio"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander" title="Charmander"></span>
+<span class="type-fire category-Allenatore background-Reduce"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png" alt="Charmeleon" title="Charmeleon"></span>
+<span class="type-flying type-fire category-Allenatore background-Reduce"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="Charizard" title="Charizard"></span>
+<span class="type-water category-Allenatore category-Criminale background-Inizio"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle" title="Squirtle"></span>
+<span class="type-water category-Allenatore background-Reduce"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png" alt="Wartortle" title="Wartortle"></span>
+<span class="type-water category-Allenatore background-Reduce"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png" alt="Blastoise" title="Blastoise"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" alt="Caterpie" title="Caterpie"></span>
+<span class="type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png" alt="Metapod" title="Metapod"></span>
+<span class="type-flying type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" alt="Butterfree" title="Butterfree"></span>
+<span class="type-poison type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png" alt="Weedle" title="Weedle"></span>
+<span class="type-poison type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png" alt="Kakuna" title="Kakuna"></span>
+<span class="type-poison type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png" alt="Beedrill" title="Beedrill"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png" alt="Pidgey" title="Pidgey"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png" alt="Pidgeotto" title="Pidgeotto"></span>
+<span class="type-flying type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png" alt="Pidgeot" title="Pidgeot"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png" alt="Rattata" title="Rattata"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png" alt="Raticate" title="Raticate"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png" alt="Spearow" title="Spearow"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png" alt="Fearow" title="Fearow"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png" alt="Ekans" title="Ekans"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png" alt="Arbok" title="Arbok"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu" title="Pikachu"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png" alt="Raichu" title="Raichu"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png" alt="Sandshrew" title="Sandshrew"></span>
+<span class="type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png" alt="Sandslash" title="Sandslash"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png" alt="Nidoran-f" title="Nidoran-f"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png" alt="Nidorina" title="Nidorina"></span>
+<span class="type-ground type-poison"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png" alt="Nidoqueen" title="Nidoqueen"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png" alt="Nidoran-m" title="Nidoran-m"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png" alt="Nidorino" title="Nidorino"></span>
+<span class="type-ground type-poison"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png" alt="Nidoking" title="Nidoking"></span>
+<span class="type-fairy category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png" alt="Clefairy" title="Clefairy"></span>
+<span class="type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png" alt="Clefable" title="Clefable"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png" alt="Vulpix" title="Vulpix"></span>
+<span class="type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png" alt="Ninetales" title="Ninetales"></span>
+<span class="type-fairy type-normal category-Allevapokemon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png" alt="Jigglypuff" title="Jigglypuff"></span>
+<span class="type-fairy type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png" alt="Wigglytuff" title="Wigglytuff"></span>
+<span class="type-flying type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png" alt="Zubat" title="Zubat"></span>
+<span class="type-flying type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png" alt="Golbat" title="Golbat"></span>
+<span class="type-poison type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png" alt="Oddish" title="Oddish"></span>
+<span class="type-poison type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png" alt="Gloom" title="Gloom"></span>
+<span class="type-poison type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png" alt="Vileplume" title="Vileplume"></span>
+<span class="type-grass type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png" alt="Paras" title="Paras"></span>
+<span class="type-grass type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png" alt="Parasect" title="Parasect"></span>
+<span class="type-poison type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png" alt="Venonat" title="Venonat"></span>
+<span class="type-poison type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png" alt="Venomoth" title="Venomoth"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png" alt="Diglett" title="Diglett"></span>
+<span class="type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png" alt="Dugtrio" title="Dugtrio"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" alt="Meowth" title="Meowth"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png" alt="Persian" title="Persian"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png" alt="Psyduck" title="Psyduck"></span>
+<span class="type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png" alt="Golduck" title="Golduck"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png" alt="Mankey" title="Mankey"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png" alt="Primeape" title="Primeape"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png" alt="Growlithe" title="Growlithe"></span>
+<span class="type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png" alt="Arcanine" title="Arcanine"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png" alt="Poliwag" title="Poliwag"></span>
+<span class="type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png" alt="Poliwhirl" title="Poliwhirl"></span>
+<span class="type-fighting type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png" alt="Poliwrath" title="Poliwrath"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png" alt="Abra" title="Abra"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png" alt="Kadabra" title="Kadabra"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" alt="Alakazam" title="Alakazam"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png" alt="Machop" title="Machop"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png" alt="Machoke" title="Machoke"></span>
+<span class="type-fighting"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png" alt="Machamp" title="Machamp"></span>
+<span class="type-poison type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png" alt="Bellsprout" title="Bellsprout"></span>
+<span class="type-poison type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png" alt="Weepinbell" title="Weepinbell"></span>
+<span class="type-poison type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png" alt="Victreebel" title="Victreebel"></span>
+<span class="type-poison type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png" alt="Tentacool" title="Tentacool"></span>
+<span class="type-poison type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png" alt="Tentacruel" title="Tentacruel"></span>
+<span class="type-ground type-rock category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png" alt="Geodude" title="Geodude"></span>
+<span class="type-ground type-rock category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png" alt="Graveler" title="Graveler"></span>
+<span class="type-ground type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png" alt="Golem" title="Golem"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png" alt="Ponyta" title="Ponyta"></span>
+<span class="type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png" alt="Rapidash" title="Rapidash"></span>
+<span class="type-psychic type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png" alt="Slowpoke" title="Slowpoke"></span>
+<span class="type-psychic type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png" alt="Slowbro" title="Slowbro"></span>
+<span class="type-steel type-electric category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png" alt="Magnemite" title="Magnemite"></span>
+<span class="type-steel type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png" alt="Magneton" title="Magneton"></span>
+<span class="type-flying type-normal category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png" alt="Farfetchd" title="Farfetchd"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png" alt="Doduo" title="Doduo"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png" alt="Dodrio" title="Dodrio"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png" alt="Seel" title="Seel"></span>
+<span class="type-ice type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png" alt="Dewgong" title="Dewgong"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png" alt="Grimer" title="Grimer"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png" alt="Muk" title="Muk"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png" alt="Shellder" title="Shellder"></span>
+<span class="type-ice type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png" alt="Cloyster" title="Cloyster"></span>
+<span class="type-poison type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png" alt="Gastly" title="Gastly"></span>
+<span class="type-poison type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png" alt="Haunter" title="Haunter"></span>
+<span class="type-poison type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png" alt="Gengar" title="Gengar"></span>
+<span class="type-ground type-rock category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png" alt="Onix" title="Onix"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png" alt="Drowzee" title="Drowzee"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png" alt="Hypno" title="Hypno"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png" alt="Krabby" title="Krabby"></span>
+<span class="type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png" alt="Kingler" title="Kingler"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png" alt="Voltorb" title="Voltorb"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png" alt="Electrode" title="Electrode"></span>
+<span class="type-psychic type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png" alt="Exeggcute" title="Exeggcute"></span>
+<span class="type-psychic type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png" alt="Exeggutor" title="Exeggutor"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png" alt="Cubone" title="Cubone"></span>
+<span class="type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png" alt="Marowak" title="Marowak"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png" alt="Hitmonlee" title="Hitmonlee"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png" alt="Hitmonchan" title="Hitmonchan"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png" alt="Lickitung" title="Lickitung"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png" alt="Koffing" title="Koffing"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png" alt="Weezing" title="Weezing"></span>
+<span class="type-rock type-ground category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png" alt="Rhyhorn" title="Rhyhorn"></span>
+<span class="type-rock type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png" alt="Rhydon" title="Rhydon"></span>
+<span class="type-normal category-Allevapokemon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png" alt="Chansey" title="Chansey"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png" alt="Tangela" title="Tangela"></span>
+<span class="type-normal category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png" alt="Kangaskhan" title="Kangaskhan"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png" alt="Horsea" title="Horsea"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png" alt="Seadra" title="Seadra"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png" alt="Goldeen" title="Goldeen"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png" alt="Seaking" title="Seaking"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png" alt="Staryu" title="Staryu"></span>
+<span class="type-psychic type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png" alt="Starmie" title="Starmie"></span>
+<span class="type-fairy type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png" alt="Mr-mime" title="Mr-mime"></span>
+<span class="type-flying type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png" alt="Scyther" title="Scyther"></span>
+<span class="type-psychic type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png" alt="Jynx" title="Jynx"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png" alt="Electabuzz" title="Electabuzz"></span>
+<span class="type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png" alt="Magmar" title="Magmar"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png" alt="Pinsir" title="Pinsir"></span>
+<span class="type-normal category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png" alt="Tauros" title="Tauros"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png" alt="Magikarp" title="Magikarp"></span>
+<span class="type-flying type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png" alt="Gyarados" title="Gyarados"></span>
+<span class="type-ice type-water category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png" alt="Lapras" title="Lapras"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="Ditto" title="Ditto"></span>
+<span class="type-normal category-Allevapokemon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png" alt="Eevee" title="Eevee"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png" alt="Vaporeon" title="Vaporeon"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png" alt="Jolteon" title="Jolteon"></span>
+<span class="type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png" alt="Flareon" title="Flareon"></span>
+<span class="type-normal category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png" alt="Porygon" title="Porygon"></span>
+<span class="type-water type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png" alt="Omanyte" title="Omanyte"></span>
+<span class="type-water type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png" alt="Omastar" title="Omastar"></span>
+<span class="type-water type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png" alt="Kabuto" title="Kabuto"></span>
+<span class="type-water type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png" alt="Kabutops" title="Kabutops"></span>
+<span class="type-flying type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png" alt="Aerodactyl" title="Aerodactyl"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png" alt="Snorlax" title="Snorlax"></span>
+<span class="type-flying type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png" alt="Articuno" title="Articuno"></span>
+<span class="type-flying type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png" alt="Zapdos" title="Zapdos"></span>
+<span class="type-flying type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png" alt="Moltres" title="Moltres"></span>
+<span class="type-dragon category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png" alt="Dratini" title="Dratini"></span>
+<span class="type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png" alt="Dragonair" title="Dragonair"></span>
+<span class="type-flying type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png" alt="Dragonite" title="Dragonite"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png" alt="Mewtwo" title="Mewtwo"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png" alt="Mew" title="Mew"></span>
+<span class="type-grass category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png" alt="Chikorita" title="Chikorita"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/153.png" alt="Bayleef" title="Bayleef"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/154.png" alt="Meganium" title="Meganium"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png" alt="Cyndaquil" title="Cyndaquil"></span>
+<span class="type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/156.png" alt="Quilava" title="Quilava"></span>
+<span class="type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png" alt="Typhlosion" title="Typhlosion"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/158.png" alt="Totodile" title="Totodile"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/159.png" alt="Croconaw" title="Croconaw"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/160.png" alt="Feraligatr" title="Feraligatr"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/161.png" alt="Sentret" title="Sentret"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/162.png" alt="Furret" title="Furret"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/163.png" alt="Hoothoot" title="Hoothoot"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png" alt="Noctowl" title="Noctowl"></span>
+<span class="type-flying type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/165.png" alt="Ledyba" title="Ledyba"></span>
+<span class="type-flying type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/166.png" alt="Ledian" title="Ledian"></span>
+<span class="type-poison type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/167.png" alt="Spinarak" title="Spinarak"></span>
+<span class="type-poison type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/168.png" alt="Ariados" title="Ariados"></span>
+<span class="type-flying type-poison"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/169.png" alt="Crobat" title="Crobat"></span>
+<span class="type-electric type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png" alt="Chinchou" title="Chinchou"></span>
+<span class="type-electric type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/171.png" alt="Lanturn" title="Lanturn"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/172.png" alt="Pichu" title="Pichu"></span>
+<span class="type-fairy category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/173.png" alt="Cleffa" title="Cleffa"></span>
+<span class="type-fairy type-normal category-Allevapokemon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/174.png" alt="Igglybuff" title="Igglybuff"></span>
+<span class="type-fairy category-Allevapokemon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png" alt="Togepi" title="Togepi"></span>
+<span class="type-flying type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/176.png" alt="Togetic" title="Togetic"></span>
+<span class="type-flying type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/177.png" alt="Natu" title="Natu"></span>
+<span class="type-flying type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/178.png" alt="Xatu" title="Xatu"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/179.png" alt="Mareep" title="Mareep"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/180.png" alt="Flaaffy" title="Flaaffy"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/181.png" alt="Ampharos" title="Ampharos"></span>
+<span class="type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/182.png" alt="Bellossom" title="Bellossom"></span>
+<span class="type-fairy type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/183.png" alt="Marill" title="Marill"></span>
+<span class="type-fairy type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png" alt="Azumarill" title="Azumarill"></span>
+<span class="type-rock category-Idealista"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/185.png" alt="Sudowoodo" title="Sudowoodo"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/186.png" alt="Politoed" title="Politoed"></span>
+<span class="type-flying type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/187.png" alt="Hoppip" title="Hoppip"></span>
+<span class="type-flying type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/188.png" alt="Skiploom" title="Skiploom"></span>
+<span class="type-flying type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/189.png" alt="Jumpluff" title="Jumpluff"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/190.png" alt="Aipom" title="Aipom"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/191.png" alt="Sunkern" title="Sunkern"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/192.png" alt="Sunflora" title="Sunflora"></span>
+<span class="type-flying type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/193.png" alt="Yanma" title="Yanma"></span>
+<span class="type-ground type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/194.png" alt="Wooper" title="Wooper"></span>
+<span class="type-ground type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/195.png" alt="Quagsire" title="Quagsire"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png" alt="Espeon" title="Espeon"></span>
+<span class="type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png" alt="Umbreon" title="Umbreon"></span>
+<span class="type-flying type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/198.png" alt="Murkrow" title="Murkrow"></span>
+<span class="type-psychic type-water category-Idealista"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/199.png" alt="Slowking" title="Slowking"></span>
+<span class="type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/200.png" alt="Misdreavus" title="Misdreavus"></span>
+<span class="type-psychic category-Scoprirovine"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201.png" alt="Unown" title="Unown"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/202.png" alt="Wobbuffet" title="Wobbuffet"></span>
+<span class="type-psychic type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png" alt="Girafarig" title="Girafarig"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/204.png" alt="Pineco" title="Pineco"></span>
+<span class="type-steel type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/205.png" alt="Forretress" title="Forretress"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/206.png" alt="Dunsparce" title="Dunsparce"></span>
+<span class="type-flying type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/207.png" alt="Gligar" title="Gligar"></span>
+<span class="type-ground type-steel category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/208.png" alt="Steelix" title="Steelix"></span>
+<span class="type-fairy category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/209.png" alt="Snubbull" title="Snubbull"></span>
+<span class="type-fairy category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/210.png" alt="Granbull" title="Granbull"></span>
+<span class="type-poison type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/211.png" alt="Qwilfish" title="Qwilfish"></span>
+<span class="type-steel type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png" alt="Scizor" title="Scizor"></span>
+<span class="type-rock type-bug category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/213.png" alt="Shuckle" title="Shuckle"></span>
+<span class="type-fighting type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/214.png" alt="Heracross" title="Heracross"></span>
+<span class="type-ice type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/215.png" alt="Sneasel" title="Sneasel"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/216.png" alt="Teddiursa" title="Teddiursa"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/217.png" alt="Ursaring" title="Ursaring"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/218.png" alt="Slugma" title="Slugma"></span>
+<span class="type-rock type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png" alt="Magcargo" title="Magcargo"></span>
+<span class="type-ground type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/220.png" alt="Swinub" title="Swinub"></span>
+<span class="type-ground type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/221.png" alt="Piloswine" title="Piloswine"></span>
+<span class="type-rock type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/222.png" alt="Corsola" title="Corsola"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/223.png" alt="Remoraid" title="Remoraid"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/224.png" alt="Octillery" title="Octillery"></span>
+<span class="type-flying type-ice category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/225.png" alt="Delibird" title="Delibird"></span>
+<span class="type-flying type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/226.png" alt="Mantine" title="Mantine"></span>
+<span class="type-flying type-steel category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/227.png" alt="Skarmory" title="Skarmory"></span>
+<span class="type-fire type-dark category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/228.png" alt="Houndour" title="Houndour"></span>
+<span class="type-fire type-dark category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/229.png" alt="Houndoom" title="Houndoom"></span>
+<span class="type-dragon type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/230.png" alt="Kingdra" title="Kingdra"></span>
+<span class="type-ground category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/231.png" alt="Phanpy" title="Phanpy"></span>
+<span class="type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/232.png" alt="Donphan" title="Donphan"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/233.png" alt="Porygon2" title="Porygon2"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/234.png" alt="Stantler" title="Stantler"></span>
+<span class="type-normal category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/235.png" alt="Smeargle" title="Smeargle"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/236.png" alt="Tyrogue" title="Tyrogue"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/237.png" alt="Hitmontop" title="Hitmontop"></span>
+<span class="type-psychic type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/238.png" alt="Smoochum" title="Smoochum"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/239.png" alt="Elekid" title="Elekid"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/240.png" alt="Magby" title="Magby"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/241.png" alt="Miltank" title="Miltank"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/242.png" alt="Blissey" title="Blissey"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/243.png" alt="Raikou" title="Raikou"></span>
+<span class="type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/244.png" alt="Entei" title="Entei"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/245.png" alt="Suicune" title="Suicune"></span>
+<span class="type-ground type-rock category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/246.png" alt="Larvitar" title="Larvitar"></span>
+<span class="type-ground type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/247.png" alt="Pupitar" title="Pupitar"></span>
+<span class="type-dark type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png" alt="Tyranitar" title="Tyranitar"></span>
+<span class="type-flying type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/249.png" alt="Lugia" title="Lugia"></span>
+<span class="type-flying type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/250.png" alt="Ho-oh" title="Ho-oh"></span>
+<span class="type-grass type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/251.png" alt="Celebi" title="Celebi"></span>
+<span class="type-grass category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png" alt="Treecko" title="Treecko"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/253.png" alt="Grovyle" title="Grovyle"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/254.png" alt="Sceptile" title="Sceptile"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/255.png" alt="Torchic" title="Torchic"></span>
+<span class="type-fighting type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/256.png" alt="Combusken" title="Combusken"></span>
+<span class="type-fighting type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/257.png" alt="Blaziken" title="Blaziken"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/258.png" alt="Mudkip" title="Mudkip"></span>
+<span class="type-ground type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/259.png" alt="Marshtomp" title="Marshtomp"></span>
+<span class="type-ground type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png" alt="Swampert" title="Swampert"></span>
+<span class="type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/261.png" alt="Poochyena" title="Poochyena"></span>
+<span class="type-dark category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/262.png" alt="Mightyena" title="Mightyena"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/263.png" alt="Zigzagoon" title="Zigzagoon"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png" alt="Linoone" title="Linoone"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/265.png" alt="Wurmple" title="Wurmple"></span>
+<span class="type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/266.png" alt="Silcoon" title="Silcoon"></span>
+<span class="type-flying type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/267.png" alt="Beautifly" title="Beautifly"></span>
+<span class="type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/268.png" alt="Cascoon" title="Cascoon"></span>
+<span class="type-poison type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/269.png" alt="Dustox" title="Dustox"></span>
+<span class="type-grass type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/270.png" alt="Lotad" title="Lotad"></span>
+<span class="type-grass type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/271.png" alt="Lombre" title="Lombre"></span>
+<span class="type-grass type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png" alt="Ludicolo" title="Ludicolo"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/273.png" alt="Seedot" title="Seedot"></span>
+<span class="type-dark type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/274.png" alt="Nuzleaf" title="Nuzleaf"></span>
+<span class="type-dark type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/275.png" alt="Shiftry" title="Shiftry"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/276.png" alt="Taillow" title="Taillow"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/277.png" alt="Swellow" title="Swellow"></span>
+<span class="type-flying type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/278.png" alt="Wingull" title="Wingull"></span>
+<span class="type-flying type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/279.png" alt="Pelipper" title="Pelipper"></span>
+<span class="type-fairy type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/280.png" alt="Ralts" title="Ralts"></span>
+<span class="type-fairy type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/281.png" alt="Kirlia" title="Kirlia"></span>
+<span class="type-fairy type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png" alt="Gardevoir" title="Gardevoir"></span>
+<span class="type-water type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/283.png" alt="Surskit" title="Surskit"></span>
+<span class="type-flying type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/284.png" alt="Masquerain" title="Masquerain"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/285.png" alt="Shroomish" title="Shroomish"></span>
+<span class="type-fighting type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/286.png" alt="Breloom" title="Breloom"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/287.png" alt="Slakoth" title="Slakoth"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/288.png" alt="Vigoroth" title="Vigoroth"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/289.png" alt="Slaking" title="Slaking"></span>
+<span class="type-ground type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/290.png" alt="Nincada" title="Nincada"></span>
+<span class="type-flying type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/291.png" alt="Ninjask" title="Ninjask"></span>
+<span class="type-ghost type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png" alt="Shedinja" title="Shedinja"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png" alt="Whismur" title="Whismur"></span>
+<span class="type-normal category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/294.png" alt="Loudred" title="Loudred"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/295.png" alt="Exploud" title="Exploud"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/296.png" alt="Makuhita" title="Makuhita"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/297.png" alt="Hariyama" title="Hariyama"></span>
+<span class="type-fairy type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/298.png" alt="Azurill" title="Azurill"></span>
+<span class="type-rock category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/299.png" alt="Nosepass" title="Nosepass"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/300.png" alt="Skitty" title="Skitty"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/301.png" alt="Delcatty" title="Delcatty"></span>
+<span class="type-ghost type-dark category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/302.png" alt="Sableye" title="Sableye"></span>
+<span class="type-fairy type-steel category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/303.png" alt="Mawile" title="Mawile"></span>
+<span class="type-rock type-steel category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/304.png" alt="Aron" title="Aron"></span>
+<span class="type-rock type-steel category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/305.png" alt="Lairon" title="Lairon"></span>
+<span class="type-rock type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/306.png" alt="Aggron" title="Aggron"></span>
+<span class="type-psychic type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/307.png" alt="Meditite" title="Meditite"></span>
+<span class="type-psychic type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/308.png" alt="Medicham" title="Medicham"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/309.png" alt="Electrike" title="Electrike"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png" alt="Manectric" title="Manectric"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png" alt="Plusle" title="Plusle"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/312.png" alt="Minun" title="Minun"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/313.png" alt="Volbeat" title="Volbeat"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png" alt="Illumise" title="Illumise"></span>
+<span class="type-poison type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/315.png" alt="Roselia" title="Roselia"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/316.png" alt="Gulpin" title="Gulpin"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/317.png" alt="Swalot" title="Swalot"></span>
+<span class="type-dark type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/318.png" alt="Carvanha" title="Carvanha"></span>
+<span class="type-dark type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/319.png" alt="Sharpedo" title="Sharpedo"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/320.png" alt="Wailmer" title="Wailmer"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/321.png" alt="Wailord" title="Wailord"></span>
+<span class="type-ground type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/322.png" alt="Numel" title="Numel"></span>
+<span class="type-ground type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png" alt="Camerupt" title="Camerupt"></span>
+<span class="type-fire" category-Tutti><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/324.png" alt="Torkoal" title="Torkoal"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/325.png" alt="Spoink" title="Spoink"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/326.png" alt="Grumpig" title="Grumpig"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/327.png" alt="Spinda" title="Spinda"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/328.png" alt="Trapinch" title="Trapinch"></span>
+<span class="type-dragon type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/329.png" alt="Vibrava" title="Vibrava"></span>
+<span class="type-dragon type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/330.png" alt="Flygon" title="Flygon"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/331.png" alt="Cacnea" title="Cacnea"></span>
+<span class="type-dark type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/332.png" alt="Cacturne" title="Cacturne"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/333.png" alt="Swablu" title="Swablu"></span>
+<span class="type-flying type-dragon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png" alt="Altaria" title="Altaria"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/335.png" alt="Zangoose" title="Zangoose"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/336.png" alt="Seviper" title="Seviper"></span>
+<span class="type-psychic type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/337.png" alt="Lunatone" title="Lunatone"></span>
+<span class="type-psychic type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/338.png" alt="Solrock" title="Solrock"></span>
+<span class="type-ground type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/339.png" alt="Barboach" title="Barboach"></span>
+<span class="type-ground type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/340.png" alt="Whiscash" title="Whiscash"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png" alt="Corphish" title="Corphish"></span>
+<span class="type-dark type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/342.png" alt="Crawdaunt" title="Crawdaunt"></span>
+<span class="type-psychic type-ground category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/343.png" alt="Baltoy" title="Baltoy"></span>
+<span class="type-psychic type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/344.png" alt="Claydol" title="Claydol"></span>
+<span class="type-grass type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/345.png" alt="Lileep" title="Lileep"></span>
+<span class="type-grass type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/346.png" alt="Cradily" title="Cradily"></span>
+<span class="type-bug type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/347.png" alt="Anorith" title="Anorith"></span>
+<span class="type-bug type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/348.png" alt="Armaldo" title="Armaldo"></span>
+<span class="type-water category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/349.png" alt="Feebas" title="Feebas"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png" alt="Milotic" title="Milotic"></span>
+<span class="type-normal category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/351.png" alt="Castform" title="Castform"></span>
+<span class="type-normal category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/352.png" alt="Kecleon" title="Kecleon"></span>
+<span class="type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/353.png" alt="Shuppet" title="Shuppet"></span>
+<span class="type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/354.png" alt="Banette" title="Banette"></span>
+<span class="type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png" alt="Duskull" title="Duskull"></span>
+<span class="type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/356.png" alt="Dusclops" title="Dusclops"></span>
+<span class="type-flying type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/357.png" alt="Tropius" title="Tropius"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/358.png" alt="Chimecho" title="Chimecho"></span>
+<span class="type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png" alt="Absol" title="Absol"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/360.png" alt="Wynaut" title="Wynaut"></span>
+<span class="type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/361.png" alt="Snorunt" title="Snorunt"></span>
+<span class="type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png" alt="Glalie" title="Glalie"></span>
+<span class="type-water type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/363.png" alt="Spheal" title="Spheal"></span>
+<span class="type-water type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/364.png" alt="Sealeo" title="Sealeo"></span>
+<span class="type-water type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/365.png" alt="Walrein" title="Walrein"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/366.png" alt="Clamperl" title="Clamperl"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/367.png" alt="Huntail" title="Huntail"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/368.png" alt="Gorebyss" title="Gorebyss"></span>
+<span class="type-rock type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/369.png" alt="Relicanth" title="Relicanth"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/370.png" alt="Luvdisc" title="Luvdisc"></span>
+<span class="type-dragon category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/371.png" alt="Bagon" title="Bagon"></span>
+<span class="type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/372.png" alt="Shelgon" title="Shelgon"></span>
+<span class="type-flying type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/373.png" alt="Salamence" title="Salamence"></span>
+<span class="type-psychic type-steel category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png" alt="Beldum" title="Beldum"></span>
+<span class="type-psychic type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/375.png" alt="Metang" title="Metang"></span>
+<span class="type-psychic type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/376.png" alt="Metagross" title="Metagross"></span>
+<span class="type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/377.png" alt="Regirock" title="Regirock"></span>
+<span class="type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/378.png" alt="Regice" title="Regice"></span>
+<span class="type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/379.png" alt="Registeel" title="Registeel"></span>
+<span class="type-psychic type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/380.png" alt="Latias" title="Latias"></span>
+<span class="type-psychic type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/381.png" alt="Latios" title="Latios"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/382.png" alt="Kyogre" title="Kyogre"></span>
+<span class="type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/383.png" alt="Groudon" title="Groudon"></span>
+<span class="type-flying type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/384.png" alt="Rayquaza" title="Rayquaza"></span>
+<span class="type-psychic type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/385.png" alt="Jirachi" title="Jirachi"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/386.png" alt="Deoxys-normal" title="Deoxys-normal"></span>
+<span class="type-grass category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/387.png" alt="Turtwig" title="Turtwig"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/388.png" alt="Grotle" title="Grotle"></span>
+<span class="type-ground type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/389.png" alt="Torterra" title="Torterra"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/390.png" alt="Chimchar" title="Chimchar"></span>
+<span class="type-fighting type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/391.png" alt="Monferno" title="Monferno"></span>
+<span class="type-fighting type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png" alt="Infernape" title="Infernape"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/393.png" alt="Piplup" title="Piplup"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/394.png" alt="Prinplup" title="Prinplup"></span>
+<span class="type-steel type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/395.png" alt="Empoleon" title="Empoleon"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/396.png" alt="Starly" title="Starly"></span>
+<span class="type-flying type-normal category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/397.png" alt="Staravia" title="Staravia"></span>
+<span class="type-flying type-normal category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/398.png" alt="Staraptor" title="Staraptor"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/399.png" alt="Bidoof" title="Bidoof"></span>
+<span class="type-water type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/400.png" alt="Bibarel" title="Bibarel"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/401.png" alt="Kricketot" title="Kricketot"></span>
+<span class="type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/402.png" alt="Kricketune" title="Kricketune"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/403.png" alt="Shinx" title="Shinx"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/404.png" alt="Luxio" title="Luxio"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/405.png" alt="Luxray" title="Luxray"></span>
+<span class="type-poison type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/406.png" alt="Budew" title="Budew"></span>
+<span class="type-poison type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/407.png" alt="Roserade" title="Roserade"></span>
+<span class="type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/408.png" alt="Cranidos" title="Cranidos"></span>
+<span class="type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/409.png" alt="Rampardos" title="Rampardos"></span>
+<span class="type-steel type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/410.png" alt="Shieldon" title="Shieldon"></span>
+<span class="type-steel type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/411.png" alt="Bastiodon" title="Bastiodon"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/412.png" alt="Burmy" title="Burmy"></span>
+<span class="type-grass type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/413.png" alt="Wormadam-plant" title="Wormadam-plant"></span>
+<span class="type-flying type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/414.png" alt="Mothim" title="Mothim"></span>
+<span class="type-flying type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/415.png" alt="Combee" title="Combee"></span>
+<span class="type-flying type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/416.png" alt="Vespiquen" title="Vespiquen"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/417.png" alt="Pachirisu" title="Pachirisu"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/418.png" alt="Buizel" title="Buizel"></span>
+<span class="type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/419.png" alt="Floatzel" title="Floatzel"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/420.png" alt="Cherubi" title="Cherubi"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/421.png" alt="Cherrim" title="Cherrim"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/422.png" alt="Shellos" title="Shellos"></span>
+<span class="type-ground type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/423.png" alt="Gastrodon" title="Gastrodon"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/424.png" alt="Ambipom" title="Ambipom"></span>
+<span class="type-flying type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" alt="Drifloon" title="Drifloon"></span>
+<span class="type-flying type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/426.png" alt="Drifblim" title="Drifblim"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/427.png" alt="Buneary" title="Buneary"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/428.png" alt="Lopunny" title="Lopunny"></span>
+<span class="type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/429.png" alt="Mismagius" title="Mismagius"></span>
+<span class="type-flying type-dark category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/430.png" alt="Honchkrow" title="Honchkrow"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/431.png" alt="Glameow" title="Glameow"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/432.png" alt="Purugly" title="Purugly"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/433.png" alt="Chingling" title="Chingling"></span>
+<span class="type-dark type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/434.png" alt="Stunky" title="Stunky"></span>
+<span class="type-dark type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/435.png" alt="Skuntank" title="Skuntank"></span>
+<span class="type-psychic type-steel category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/436.png" alt="Bronzor" title="Bronzor"></span>
+<span class="type-psychic type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/437.png" alt="Bronzong" title="Bronzong"></span>
+<span class="type-rock category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/438.png" alt="Bonsly" title="Bonsly"></span>
+<span class="type-fairy type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/439.png" alt="Mime-jr" title="Mime-jr"></span>
+<span class="type-normal category-Allevapokemon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/440.png" alt="Happiny" title="Happiny"></span>
+<span class="type-flying type-normal category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/441.png" alt="Chatot" title="Chatot"></span>
+<span class="type-dark type-ghost category-Scoprirovine"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/442.png" alt="Spiritomb" title="Spiritomb"></span>
+<span class="type-ground type-dragon category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/443.png" alt="Gible" title="Gible"></span>
+<span class="type-ground type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/444.png" alt="Gabite" title="Gabite"></span>
+<span class="type-ground type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png" alt="Garchomp" title="Garchomp"></span>
+<span class="type-normal category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/446.png" alt="Munchlax" title="Munchlax"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/447.png" alt="Riolu" title="Riolu"></span>
+<span class="type-steel type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png" alt="Lucario" title="Lucario"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/449.png" alt="Hippopotas" title="Hippopotas"></span>
+<span class="type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/450.png" alt="Hippowdon" title="Hippowdon"></span>
+<span class="type-bug type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/451.png" alt="Skorupi" title="Skorupi"></span>
+<span class="type-dark type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/452.png" alt="Drapion" title="Drapion"></span>
+<span class="type-fighting type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/453.png" alt="Croagunk" title="Croagunk"></span>
+<span class="type-fighting type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/454.png" alt="Toxicroak" title="Toxicroak"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/455.png" alt="Carnivine" title="Carnivine"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/456.png" alt="Finneon" title="Finneon"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/457.png" alt="Lumineon" title="Lumineon"></span>
+<span class="type-flying type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/458.png" alt="Mantyke" title="Mantyke"></span>
+<span class="type-ice type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/459.png" alt="Snover" title="Snover"></span>
+<span class="type-ice type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/460.png" alt="Abomasnow" title="Abomasnow"></span>
+<span class="type-ice type-dark category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/461.png" alt="Weavile" title="Weavile"></span>
+<span class="type-steel type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/462.png" alt="Magnezone" title="Magnezone"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/463.png" alt="Lickilicky" title="Lickilicky"></span>
+<span class="type-rock type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/464.png" alt="Rhyperior" title="Rhyperior"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/465.png" alt="Tangrowth" title="Tangrowth"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/466.png" alt="Electivire" title="Electivire"></span>
+<span class="type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/467.png" alt="Magmortar" title="Magmortar"></span>
+<span class="type-flying type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/468.png" alt="Togekiss" title="Togekiss"></span>
+<span class="type-flying type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/469.png" alt="Yanmega" title="Yanmega"></span>
+<span class="type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png" alt="Leafeon" title="Leafeon"></span>
+<span class="type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png" alt="Glaceon" title="Glaceon"></span>
+<span class="type-flying type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/472.png" alt="Gliscor" title="Gliscor"></span>
+<span class="type-ground type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png" alt="Mamoswine" title="Mamoswine"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png" alt="Porygon-z" title="Porygon-z"></span>
+<span class="type-fighting type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/475.png" alt="Gallade" title="Gallade"></span>
+<span class="type-steel type-rock category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/476.png" alt="Probopass" title="Probopass"></span>
+<span class="type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/477.png" alt="Dusknoir" title="Dusknoir"></span>
+<span class="type-ghost type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/478.png" alt="Froslass" title="Froslass"></span>
+<span class="type-ghost type-electric category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png" alt="Rotom" title="Rotom"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/480.png" alt="Uxie" title="Uxie"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/481.png" alt="Mesprit" title="Mesprit"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/482.png" alt="Azelf" title="Azelf"></span>
+<span class="type-dragon type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/483.png" alt="Dialga" title="Dialga"></span>
+<span class="type-dragon type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/484.png" alt="Palkia" title="Palkia"></span>
+<span class="type-steel type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/485.png" alt="Heatran" title="Heatran"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/486.png" alt="Regigigas" title="Regigigas"></span>
+<span class="type-dragon type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/487.png" alt="Giratina-altered" title="Giratina-altered"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/488.png" alt="Cresselia" title="Cresselia"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/489.png" alt="Phione" title="Phione"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/490.png" alt="Manaphy" title="Manaphy"></span>
+<span class="type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/491.png" alt="Darkrai" title="Darkrai"></span>
+<span class="type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/492.png" alt="Shaymin-land" title="Shaymin-land"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493.png" alt="Arceus" title="Arceus"></span>
+<span class="type-fire type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/494.png" alt="Victini" title="Victini"></span>
+<span class="type-grass category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/495.png" alt="Snivy" title="Snivy"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/496.png" alt="Servine" title="Servine"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/497.png" alt="Serperior" title="Serperior"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/498.png" alt="Tepig" title="Tepig"></span>
+<span class="type-fighting type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/499.png" alt="Pignite" title="Pignite"></span>
+<span class="type-fighting type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/500.png" alt="Emboar" title="Emboar"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/501.png" alt="Oshawott" title="Oshawott"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/502.png" alt="Dewott" title="Dewott"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png" alt="Samurott" title="Samurott"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/504.png" alt="Patrat" title="Patrat"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/505.png" alt="Watchog" title="Watchog"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/506.png" alt="Lillipup" title="Lillipup"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/507.png" alt="Herdier" title="Herdier"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/508.png" alt="Stoutland" title="Stoutland"></span>
+<span class="type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/509.png" alt="Purrloin" title="Purrloin"></span>
+<span class="type-dark category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/510.png" alt="Liepard" title="Liepard"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/511.png" alt="Pansage" title="Pansage"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/512.png" alt="Simisage" title="Simisage"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/513.png" alt="Pansear" title="Pansear"></span>
+<span class="type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/514.png" alt="Simisear" title="Simisear"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/515.png" alt="Panpour" title="Panpour"></span>
+<span class="type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/516.png" alt="Simipour" title="Simipour"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/517.png" alt="Munna" title="Munna"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/518.png" alt="Musharna" title="Musharna"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/519.png" alt="Pidove" title="Pidove"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/520.png" alt="Tranquill" title="Tranquill"></span>
+<span class="type-flying type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/521.png" alt="Unfezant" title="Unfezant"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/522.png" alt="Blitzle" title="Blitzle"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/523.png" alt="Zebstrika" title="Zebstrika"></span>
+<span class="type-rock category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/524.png" alt="Roggenrola" title="Roggenrola"></span>
+<span class="type-rock category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/525.png" alt="Boldore" title="Boldore"></span>
+<span class="type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/526.png" alt="Gigalith" title="Gigalith"></span>
+<span class="type-flying type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/527.png" alt="Woobat" title="Woobat"></span>
+<span class="type-flying type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/528.png" alt="Swoobat" title="Swoobat"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/529.png" alt="Drilbur" title="Drilbur"></span>
+<span class="type-steel type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/530.png" alt="Excadrill" title="Excadrill"></span>
+<span class="type-normal category-Allevapokemon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/531.png" alt="Audino" title="Audino"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/532.png" alt="Timburr" title="Timburr"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/533.png" alt="Gurdurr" title="Gurdurr"></span>
+<span class="type-fighting"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/534.png" alt="Conkeldurr" title="Conkeldurr"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/535.png" alt="Tympole" title="Tympole"></span>
+<span class="type-ground type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/536.png" alt="Palpitoad" title="Palpitoad"></span>
+<span class="type-ground type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/537.png" alt="Seismitoad" title="Seismitoad"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/538.png" alt="Throh" title="Throh"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/539.png" alt="Sawk" title="Sawk"></span>
+<span class="type-grass type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png" alt="Sewaddle" title="Sewaddle"></span>
+<span class="type-grass type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/541.png" alt="Swadloon" title="Swadloon"></span>
+<span class="type-grass type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/542.png" alt="Leavanny" title="Leavanny"></span>
+<span class="type-poison type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/543.png" alt="Venipede" title="Venipede"></span>
+<span class="type-poison type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/544.png" alt="Whirlipede" title="Whirlipede"></span>
+<span class="type-poison type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/545.png" alt="Scolipede" title="Scolipede"></span>
+<span class="type-fairy type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/546.png" alt="Cottonee" title="Cottonee"></span>
+<span class="type-fairy type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/547.png" alt="Whimsicott" title="Whimsicott"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/548.png" alt="Petilil" title="Petilil"></span>
+<span class="type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/549.png" alt="Lilligant" title="Lilligant"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/550.png" alt="Basculin-red-striped" title="Basculin-red-striped"></span>
+<span class="type-dark type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/551.png" alt="Sandile" title="Sandile"></span>
+<span class="type-dark type-ground category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/552.png" alt="Krokorok" title="Krokorok"></span>
+<span class="type-dark type-ground category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/553.png" alt="Krookodile" title="Krookodile"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/554.png" alt="Darumaka" title="Darumaka"></span>
+<span class="type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/555.png" alt="Darmanitan-standard" title="Darmanitan-standard"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/556.png" alt="Maractus" title="Maractus"></span>
+<span class="type-rock type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/557.png" alt="Dwebble" title="Dwebble"></span>
+<span class="type-rock type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/558.png" alt="Crustle" title="Crustle"></span>
+<span class="type-fighting type-dark category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/559.png" alt="Scraggy" title="Scraggy"></span>
+<span class="type-fighting type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/560.png" alt="Scrafty" title="Scrafty"></span>
+<span class="type-flying type-psychic category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/561.png" alt="Sigilyph" title="Sigilyph"></span>
+<span class="type-ghost category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/562.png" alt="Yamask" title="Yamask"></span>
+<span class="type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/563.png" alt="Cofagrigus" title="Cofagrigus"></span>
+<span class="type-rock type-water category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/564.png" alt="Tirtouga" title="Tirtouga"></span>
+<span class="type-rock type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/565.png" alt="Carracosta" title="Carracosta"></span>
+<span class="type-flying type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/566.png" alt="Archen" title="Archen"></span>
+<span class="type-flying type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/567.png" alt="Archeops" title="Archeops"></span>
+<span class="type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/568.png" alt="Trubbish" title="Trubbish"></span>
+<span class="type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png" alt="Garbodor" title="Garbodor"></span>
+<span class="type-dark category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/570.png" alt="Zorua" title="Zorua"></span>
+<span class="type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png" alt="Zoroark" title="Zoroark"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/572.png" alt="Minccino" title="Minccino"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png" alt="Cinccino" title="Cinccino"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/574.png" alt="Gothita" title="Gothita"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/575.png" alt="Gothorita" title="Gothorita"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/576.png" alt="Gothitelle" title="Gothitelle"></span>
+<span class="type-psychic category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/577.png" alt="Solosis" title="Solosis"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/578.png" alt="Duosion" title="Duosion"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/579.png" alt="Reuniclus" title="Reuniclus"></span>
+<span class="type-flying type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/580.png" alt="Ducklett" title="Ducklett"></span>
+<span class="type-flying type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/581.png" alt="Swanna" title="Swanna"></span>
+<span class="type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/582.png" alt="Vanillite" title="Vanillite"></span>
+<span class="type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/583.png" alt="Vanillish" title="Vanillish"></span>
+<span class="type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/584.png" alt="Vanilluxe" title="Vanilluxe"></span>
+<span class="type-grass type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/585.png" alt="Deerling" title="Deerling"></span>
+<span class="type-grass type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/586.png" alt="Sawsbuck" title="Sawsbuck"></span>
+<span class="type-flying type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/587.png" alt="Emolga" title="Emolga"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/588.png" alt="Karrablast" title="Karrablast"></span>
+<span class="type-steel type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/589.png" alt="Escavalier" title="Escavalier"></span>
+<span class="type-poison type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/590.png" alt="Foongus" title="Foongus"></span>
+<span class="type-poison type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/591.png" alt="Amoonguss" title="Amoonguss"></span>
+<span class="type-ghost type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/592.png" alt="Frillish" title="Frillish"></span>
+<span class="type-ghost type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png" alt="Jellicent" title="Jellicent"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/594.png" alt="Alomomola" title="Alomomola"></span>
+<span class="type-electric type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/595.png" alt="Joltik" title="Joltik"></span>
+<span class="type-electric type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/596.png" alt="Galvantula" title="Galvantula"></span>
+<span class="type-steel type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/597.png" alt="Ferroseed" title="Ferroseed"></span>
+<span class="type-steel type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/598.png" alt="Ferrothorn" title="Ferrothorn"></span>
+<span class="type-steel category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/599.png" alt="Klink" title="Klink"></span>
+<span class="type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png" alt="Klang" title="Klang"></span>
+<span class="type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/601.png" alt="Klinklang" title="Klinklang"></span>
+<span class="type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/602.png" alt="Tynamo" title="Tynamo"></span>
+<span class="type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/603.png" alt="Eelektrik" title="Eelektrik"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/604.png" alt="Eelektross" title="Eelektross"></span>
+<span class="type-psychic category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/605.png" alt="Elgyem" title="Elgyem"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/606.png" alt="Beheeyem" title="Beheeyem"></span>
+<span class="type-fire type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/607.png" alt="Litwick" title="Litwick"></span>
+<span class="type-fire type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/608.png" alt="Lampent" title="Lampent"></span>
+<span class="type-fire type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/609.png" alt="Chandelure" title="Chandelure"></span>
+<span class="type-dragon category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png" alt="Axew" title="Axew"></span>
+<span class="type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/611.png" alt="Fraxure" title="Fraxure"></span>
+<span class="type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/612.png" alt="Haxorus" title="Haxorus"></span>
+<span class="type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/613.png" alt="Cubchoo" title="Cubchoo"></span>
+<span class="type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/614.png" alt="Beartic" title="Beartic"></span>
+<span class="type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/615.png" alt="Cryogonal" title="Cryogonal"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/616.png" alt="Shelmet" title="Shelmet"></span>
+<span class="type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/617.png" alt="Accelgor" title="Accelgor"></span>
+<span class="type-electric type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png" alt="Stunfisk" title="Stunfisk"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/619.png" alt="Mienfoo" title="Mienfoo"></span>
+<span class="type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/620.png" alt="Mienshao" title="Mienshao"></span>
+<span class="type-dragon category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/621.png" alt="Druddigon" title="Druddigon"></span>
+<span class="type-ghost type-ground category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/622.png" alt="Golett" title="Golett"></span>
+<span class="type-ghost type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/623.png" alt="Golurk" title="Golurk"></span>
+<span class="type-steel type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/624.png" alt="Pawniard" title="Pawniard"></span>
+<span class="type-steel type-dark category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/625.png" alt="Bisharp" title="Bisharp"></span>
+<span class="type-normal category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/626.png" alt="Bouffalant" title="Bouffalant"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/627.png" alt="Rufflet" title="Rufflet"></span>
+<span class="type-flying type-normal category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/628.png" alt="Braviary" title="Braviary"></span>
+<span class="type-flying type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/629.png" alt="Vullaby" title="Vullaby"></span>
+<span class="type-flying type-dark category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/630.png" alt="Mandibuzz" title="Mandibuzz"></span>
+<span class="type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/631.png" alt="Heatmor" title="Heatmor"></span>
+<span class="type-steel type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/632.png" alt="Durant" title="Durant"></span>
+<span class="type-dragon type-dark category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/633.png" alt="Deino" title="Deino"></span>
+<span class="type-dragon type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/634.png" alt="Zweilous" title="Zweilous"></span>
+<span class="type-dragon type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/635.png" alt="Hydreigon" title="Hydreigon"></span>
+<span class="type-fire type-bug category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/636.png" alt="Larvesta" title="Larvesta"></span>
+<span class="type-fire type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/637.png" alt="Volcarona" title="Volcarona"></span>
+<span class="type-fighting type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/638.png" alt="Cobalion" title="Cobalion"></span>
+<span class="type-fighting type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/639.png" alt="Terrakion" title="Terrakion"></span>
+<span class="type-fighting type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/640.png" alt="Virizion" title="Virizion"></span>
+<span class="type-flying"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/641.png" alt="Tornadus-incarnate" title="Tornadus-incarnate"></span>
+<span class="type-flying type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/642.png" alt="Thundurus-incarnate" title="Thundurus-incarnate"></span>
+<span class="type-fire type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png" alt="Reshiram" title="Reshiram"></span>
+<span class="type-electric type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/644.png" alt="Zekrom" title="Zekrom"></span>
+<span class="type-flying type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/645.png" alt="Landorus-incarnate" title="Landorus-incarnate"></span>
+<span class="type-ice type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/646.png" alt="Kyurem" title="Kyurem"></span>
+<span class="type-fighting type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png" alt="Keldeo-ordinary" title="Keldeo-ordinary"></span>
+<span class="type-psychic type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/648.png" alt="Meloetta-aria" title="Meloetta-aria"></span>
+<span class="type-steel type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/649.png" alt="Genesect" title="Genesect"></span>
+<span class="type-grass category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png" alt="Chespin" title="Chespin"></span>
+<span class="type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/651.png" alt="Quilladin" title="Quilladin"></span>
+<span class="type-fighting type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/652.png" alt="Chesnaught" title="Chesnaught"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/653.png" alt="Fennekin" title="Fennekin"></span>
+<span class="type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/654.png" alt="Braixen" title="Braixen"></span>
+<span class="type-psychic type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png" alt="Delphox" title="Delphox"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/656.png" alt="Froakie" title="Froakie"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/657.png" alt="Frogadier" title="Frogadier"></span>
+<span class="type-dark type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png" alt="Greninja" title="Greninja"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/659.png" alt="Bunnelby" title="Bunnelby"></span>
+<span class="type-ground type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/660.png" alt="Diggersby" title="Diggersby"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/661.png" alt="Fletchling" title="Fletchling"></span>
+<span class="type-flying type-fire category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/662.png" alt="Fletchinder" title="Fletchinder"></span>
+<span class="type-flying type-fire category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png" alt="Talonflame" title="Talonflame"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/664.png" alt="Scatterbug" title="Scatterbug"></span>
+<span class="type-bug" category-Criminale><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/665.png" alt="Spewpa" title="Spewpa"></span>
+<span class="type-flying type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png" alt="Vivillon" title="Vivillon"></span>
+<span class="type-normal type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png" alt="Litleo" title="Litleo"></span>
+<span class="type-normal type-fire category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/668.png" alt="Pyroar" title="Pyroar"></span>
+<span class="type-fairy category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/669.png" alt="Flabebe" title="Flabebe"></span>
+<span class="type-fairy category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/670.png" alt="Floette" title="Floette"></span>
+<span class="type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/671.png" alt="Florges" title="Florges"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/672.png" alt="Skiddo" title="Skiddo"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/673.png" alt="Gogoat" title="Gogoat"></span>
+<span class="type-fighting category-Idealista category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/674.png" alt="Pancham" title="Pancham"></span>
+<span class="type-dark type-fighting"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/675.png" alt="Pangoro" title="Pangoro"></span>
+<span class="type-normal category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/676.png" alt="Furfrou" title="Furfrou"></span>
+<span class="type-psychic category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/677.png" alt="Espurr" title="Espurr"></span>
+<span class="type-psychic category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png" alt="Meowstic-male" title="Meowstic-male"></span>
+<span class="type-ghost type-steel category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/679.png" alt="Honedge" title="Honedge"></span>
+<span class="type-ghost type-steel category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/680.png" alt="Doublade" title="Doublade"></span>
+<span class="type-ghost type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/681.png" alt="Aegislash-shield" title="Aegislash-shield"></span>
+<span class="type-fairy category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/682.png" alt="Spritzee" title="Spritzee"></span>
+<span class="type-fairy category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/683.png" alt="Aromatisse" title="Aromatisse"></span>
+<span class="type-fairy category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/684.png" alt="Swirlix" title="Swirlix"></span>
+<span class="type-fairy category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/685.png" alt="Slurpuff" title="Slurpuff"></span>
+<span class="type-psychic type-dark category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/686.png" alt="Inkay" title="Inkay"></span>
+<span class="type-psychic type-dark category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/687.png" alt="Malamar" title="Malamar"></span>
+<span class="type-water type-rock category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/688.png" alt="Binacle" title="Binacle"></span>
+<span class="type-water type-rock category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/689.png" alt="Barbaracle" title="Barbaracle"></span>
+<span class="type-water type-poison"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png" alt="Skrelp" title="Skrelp"></span>
+<span class="type-dragon type-poison"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/691.png" alt="Dragalge" title="Dragalge"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/692.png" alt="Clauncher" title="Clauncher"></span>
+<span class="type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/693.png" alt="Clawitzer" title="Clawitzer"></span>
+<span class="type-normal type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/694.png" alt="Helioptile" title="Helioptile"></span>
+<span class="type-normal type-electric category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/695.png" alt="Heliolisk" title="Heliolisk"></span>
+<span class="type-dragon type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/696.png" alt="Tyrunt" title="Tyrunt"></span>
+<span class="type-dragon type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/697.png" alt="Tyrantrum" title="Tyrantrum"></span>
+<span class="type-ice type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/698.png" alt="Amaura" title="Amaura"></span>
+<span class="type-ice type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/699.png" alt="Aurorus" title="Aurorus"></span>
+<span class="type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png" alt="Sylveon" title="Sylveon"></span>
+<span class="type-flying type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png" alt="Hawlucha" title="Hawlucha"></span>
+<span class="type-fairy type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/702.png" alt="Dedenne" title="Dedenne"></span>
+<span class="type-fairy type-rock category-Scoprirovine category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/703.png" alt="Carbink" title="Carbink"></span>
+<span class="type-dragon category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/704.png" alt="Goomy" title="Goomy"></span>
+<span class="type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/705.png" alt="Sliggoo" title="Sliggoo"></span>
+<span class="type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png" alt="Goodra" title="Goodra"></span>
+<span class="type-fairy type-steel category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png" alt="Klefki" title="Klefki"></span>
+<span class="type-grass type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/708.png" alt="Phantump" title="Phantump"></span>
+<span class="type-grass type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/709.png" alt="Trevenant" title="Trevenant"></span>
+<span class="type-grass type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/710.png" alt="Pumpkaboo-average" title="Pumpkaboo-average"></span>
+<span class="type-grass type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/711.png" alt="Gourgeist-average" title="Gourgeist-average"></span>
+<span class="type-ice category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/712.png" alt="Bergmite" title="Bergmite"></span>
+<span class="type-ice category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/713.png" alt="Avalugg" title="Avalugg"></span>
+<span class="type-dragon type-flying category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/714.png" alt="Noibat" title="Noibat"></span>
+<span class="type-dragon type-flying category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png" alt="Noivern" title="Noivern"></span>
+<span class="type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/716.png" alt="Xerneas" title="Xerneas"></span>
+<span class="type-flying type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/717.png" alt="Yveltal" title="Yveltal"></span>
+<span class="type-ground type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/718.png" alt="Zygarde" title="Zygarde"></span>
+<span class="type-fairy type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/719.png" alt="Diancie" title="Diancie"></span>
+<span class="type-ghost type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/720.png" alt="Hoopa" title="Hoopa"></span>
+<span class="type-water type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/721.png" alt="Volcanion" title="Volcanion"></span>
+<span class="type-flying type-grass category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/722.png" alt="Rowlet" title="Rowlet"></span>
+<span class="type-flying type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/723.png" alt="Dartrix" title="Dartrix"></span>
+<span class="type-ghost type-grass category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/724.png" alt="Decidueye" title="Decidueye"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/725.png" alt="Litten" title="Litten"></span>
+<span class="type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/726.png" alt="Torracat" title="Torracat"></span>
+<span class="type-dark type-fire category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/727.png" alt="Incineroar" title="Incineroar"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/728.png" alt="Popplio" title="Popplio"></span>
+<span class="type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/729.png" alt="Brionne" title="Brionne"></span>
+<span class="type-fairy type-water category-Allenatore"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/730.png" alt="Primarina" title="Primarina"></span>
+<span class="type-flying type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/731.png" alt="Pikipek" title="Pikipek"></span>
+<span class="type-flying type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/732.png" alt="Trumbeak" title="Trumbeak"></span>
+<span class="type-flying type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/733.png" alt="Toucannon" title="Toucannon"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/734.png" alt="Yungoos" title="Yungoos"></span>
+<span class="type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/735.png" alt="Gumshoos" title="Gumshoos"></span>
+<span class="type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/736.png" alt="Grubbin" title="Grubbin"></span>
+<span class="type-electric type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/737.png" alt="Charjabug" title="Charjabug"></span>
+<span class="type-electric type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/738.png" alt="Vikavolt" title="Vikavolt"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/739.png" alt="Crabrawler" title="Crabrawler"></span>
+<span class="type-ice type-fighting category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/740.png" alt="Crabominable" title="Crabominable"></span>
+<span class="type-flying type-fire category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/741.png" alt="Oricorio-baile" title="Oricorio-baile"></span>
+<span class="type-fairy type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/742.png" alt="Cutiefly" title="Cutiefly"></span>
+<span class="type-fairy type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/743.png" alt="Ribombee" title="Ribombee"></span>
+<span class="type-rock category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/744.png" alt="Rockruff" title="Rockruff"></span>
+<span class="type-rock category-Pokefan"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/745.png" alt="Lycanroc-midday" title="Lycanroc-midday"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/746.png" alt="Wishiwashi-solo" title="Wishiwashi-solo"></span>
+<span class="type-water type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/747.png" alt="Mareanie" title="Mareanie"></span>
+<span class="type-water type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/748.png" alt="Toxapex" title="Toxapex"></span>
+<span class="type-ground category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/749.png" alt="Mudbray" title="Mudbray"></span>
+<span class="type-ground category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/750.png" alt="Mudsdale" title="Mudsdale"></span>
+<span class="type-bug type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/751.png" alt="Dewpider" title="Dewpider"></span>
+<span class="type-bug type-water category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/752.png" alt="Araquanid" title="Araquanid"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/753.png" alt="Fomantis" title="Fomantis"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/754.png" alt="Lurantis" title="Lurantis"></span>
+<span class="type-fairy type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/755.png" alt="Morelull" title="Morelull"></span>
+<span class="type-fairy type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/756.png" alt="Shiinotic" title="Shiinotic"></span>
+<span class="type-fire type-poison category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/757.png" alt="Salandit" title="Salandit"></span>
+<span class="type-fire type-poison category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/758.png" alt="Salazzle" title="Salazzle"></span>
+<span class="type-fighting type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/759.png" alt="Stufful" title="Stufful"></span>
+<span class="type-fighting type-normal category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/760.png" alt="Bewear" title="Bewear"></span>
+<span class="type-grass category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/761.png" alt="Bounsweet" title="Bounsweet"></span>
+<span class="type-grass category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/762.png" alt="Steenee" title="Steenee"></span>
+<span class="type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/763.png" alt="Tsareena" title="Tsareena"></span>
+<span class="type-fairy category-Allevapokemon category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/764.png" alt="Comfey" title="Comfey"></span>
+<span class="type-psychic type-normal category-Idealista category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/765.png" alt="Oranguru" title="Oranguru"></span>
+<span class="type-fighting category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/766.png" alt="Passimian" title="Passimian"></span>
+<span class="type-water type-bug category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/767.png" alt="Wimpod" title="Wimpod"></span>
+<span class="type-water type-bug category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/768.png" alt="Golisopod" title="Golisopod"></span>
+<span class="type-ground type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/769.png" alt="Sandygast" title="Sandygast"></span>
+<span class="type-ground type-ghost category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/770.png" alt="Palossand" title="Palossand"></span>
+<span class="type-water category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/771.png" alt="Pyukumuku" title="Pyukumuku"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/772.png" alt="Type-null" title="Type-null"></span>
+<span class="type-normal category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/773.png" alt="Silvally" title="Silvally"></span>
+<span class="type-flying type-rock category-Scienziato category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/774.png" alt="Minior-red-meteor" title="Minior-red-meteor"></span>
+<span class="type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/775.png" alt="Komala" title="Komala"></span>
+<span class="type-dragon type-fire category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/776.png" alt="Turtonator" title="Turtonator"></span>
+<span class="type-steel type-electric category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/777.png" alt="Togedemaru" title="Togedemaru"></span>
+<span class="type-fairy type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/778.png" alt="Mimikyu-disguised" title="Mimikyu-disguised"></span>
+<span class="type-psychic type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/779.png" alt="Bruxish" title="Bruxish"></span>
+<span class="type-dragon type-normal category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/780.png" alt="Drampa" title="Drampa"></span>
+<span class="type-grass type-ghost category-Tutti"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/781.png" alt="Dhelmise" title="Dhelmise"></span>
+<span class="type-dragon category-Pokefan category-Criminale"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/782.png" alt="Jangmo-o" title="Jangmo-o"></span>
+<span class="type-fighting type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/783.png" alt="Hakamo-o" title="Hakamo-o"></span>
+<span class="type-fighting type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/784.png" alt="Kommo-o" title="Kommo-o"></span>
+<span class="type-fairy type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/785.png" alt="Tapu-koko" title="Tapu-koko"></span>
+<span class="type-fairy type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/786.png" alt="Tapu-lele" title="Tapu-lele"></span>
+<span class="type-fairy type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/787.png" alt="Tapu-bulu" title="Tapu-bulu"></span>
+<span class="type-fairy type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/788.png" alt="Tapu-fini" title="Tapu-fini"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/789.png" alt="Cosmog" title="Cosmog"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/790.png" alt="Cosmoem" title="Cosmoem"></span>
+<span class="type-steel type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/791.png" alt="Solgaleo" title="Solgaleo"></span>
+<span class="type-ghost type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/792.png" alt="Lunala" title="Lunala"></span>
+<span class="type-poison type-rock category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/793.png" alt="Nihilego" title="Nihilego"></span>
+<span class="type-fighting type-bug category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/794.png" alt="Buzzwole" title="Buzzwole"></span>
+<span class="type-fighting type-bug category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/795.png" alt="Pheromosa" title="Pheromosa"></span>
+<span class="type-electric category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/796.png" alt="Xurkitree" title="Xurkitree"></span>
+<span class="type-flying type-steel category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/797.png" alt="Celesteela" title="Celesteela"></span>
+<span class="type-steel type-grass category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/798.png" alt="Kartana" title="Kartana"></span>
+<span class="type-dragon type-dark category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/799.png" alt="Guzzlord" title="Guzzlord"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/800.png" alt="Necrozma" title="Necrozma"></span>
+<span class="type-fairy type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/801.png" alt="Magearna" title="Magearna"></span>
+<span class="type-ghost type-fighting"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/802.png" alt="Marshadow" title="Marshadow"></span>
+<span class="type-poison category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/803.png" alt="Poipole" title="Poipole"></span></span>
+<span class="type-dragon type-poison category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/804.png" alt="Naganadel" title="Naganadel"></span>
+<span class="type-steel type-rock category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/805.png" alt="Stakataka" title="Stakataka"></span>
+<span class="type-ghost type-fire category-Agente"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/806.png" alt="Blacephalon" title="Blacephalon"></span>
+<span class="type-electric"><img src="https://cdn.bulbagarden.net/upload/thumb/a/a7/807Zeraora.png/96px-807Zeraora.png" alt="Zeraora" title="Zeraora"></span>
+<span class="type-grass category-Allenatore category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/9/93/810Grookey.png/96px-810Grookey.png" alt="Grookey" title="Grookey"></span>
+<span class="type-grass category-Allenatore"><img src="https://cdn.bulbagarden.net/upload/thumb/8/8f/811Thwackey.png/96px-811Thwackey.png" alt="Thwackey" title="Thwackey"></span>
+<span class="type-grass category-Allenatore"><img src="https://cdn.bulbagarden.net/upload/thumb/4/47/812Rillaboom.png/96px-812Rillaboom.png" alt="Rillaboom" title="Rillaboom"></span>
+<span class="type-fire category-Allenatore category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/0/06/813Scorbunny.png/96px-813Scorbunny.png" alt="Scorbunny" title="Scorbunny"></span>
+<span class="type-fire category-Allenatore"><img src="https://cdn.bulbagarden.net/upload/thumb/b/bc/814Raboot.png/96px-814Raboot.png" alt="Raboot" title="Raboot"></span>
+<span class="type-fire category-Allenatore"><img src="https://cdn.bulbagarden.net/upload/thumb/b/b0/815Cinderace.png/96px-815Cinderace.png" alt="Cinderace" title="Cinderace"></span>
+<span class="type-water category-Allenatore category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/9/9b/816Sobble.png/96px-816Sobble.png" alt="Sobble" title="Sobble"></span>
+<span class="type-water category-Allenatore"><img src="https://cdn.bulbagarden.net/upload/thumb/6/6c/817Drizzile.png/96px-817Drizzile.png" alt="Drizzile" title="Drizzile"></span>
+<span class="type-water category-Allenatore"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e4/818Inteleon.png/96px-818Inteleon.png" alt="Inteleon" title="Inteleon"></span>
+<span class="type-normal category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/c/ce/819Skwovet.png/96px-819Skwovet.png" alt="Skwovet" title="Skwovet"></span>
+<span class="type-normal category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/6/6b/820Greedent.png/96px-820Greedent.png" alt="Greedent" title="Greedent"></span>
+<span class="type-flying category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/7/79/821Rookidee.png/96px-821Rookidee.png" alt="Rookidee" title="Rookidee"></span>
+<span class="type-flying type-steel category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/ec/822Corvisquire.png/96px-822Corvisquire.png" alt="Corvisquire" title="Corvisquire"></span>
+<span class="type-flying type-steel"><img src="https://cdn.bulbagarden.net/upload/thumb/0/0c/823Corviknight.png/96px-823Corviknight.png" alt="Corviknight" title="Corviknight"></span>
+<span class="type-bug category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/4/4c/824Blipbug.png/96px-824Blipbug.png" alt="Blipbug" title="Blipbug"></span>
+<span class="type-bug type-psychic category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/9/95/825Dottler.png/96px-825Dottler.png" alt="Dottler" title="Dottler"></span>
+<span class="type-bug type-psychic"><img src="https://cdn.bulbagarden.net/upload/thumb/7/79/826Orbeetle.png/96px-826Orbeetle.png" alt="Orbeetle" title="Orbeetle"></span>
+<span class="type-dark category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/2/22/827Nickit.png/96px-827Nickit.png" alt="Nickit" title="Nickit"></span>
+<span class="type-dark category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e7/828Thievul.png/96px-828Thievul.png" alt="Thievul" title="Thievul"></span>
+<span class="type-grass category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/4/4c/829Gossifleur.png/96px-829Gossifleur.png" alt="Gossifleur" title="Gossifleur"></span>
+<span class="type-grass category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/3/34/830Eldegoss.png/96px-830Eldegoss.png" alt="Eldegoss" title="Eldegoss"></span>
+<span class="type-normal category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/1/1f/831Wooloo.png/96px-831Wooloo.png" alt="Wooloo" title="Wooloo"></span>
+<span class="type-normal category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/9/9a/832Dubwool.png/96px-832Dubwool.png" alt="Dubwool" title="Dubwool"></span>
+<span class="type-water category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/2/22/833Chewtle.png/96px-833Chewtle.png" alt="Chewtle" title="Chewtle"></span>
+<span class="type-water type-rock category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/b/be/834Drednaw.png/96px-834Drednaw.png" alt="Drednaw" title="Drednaw"></span>
+<span class="type-electric category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/6/63/835Yamper.png/96px-835Yamper.png" alt="Yamper" title="Yamper"></span>
+<span class="type-electric category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e4/836Boltund.png/96px-836Boltund.png" alt="Boltund" title="Boltund"></span>
+<span class="type-rock category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/a/a1/837Rolycoly.png/96px-837Rolycoly.png" alt="Rolycoly" title="Rolycoly"></span>
+<span class="type-rock type-fire category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e1/838Carkol.png/96px-838Carkol.png" alt="Carkol" title="Carkol"></span>
+<span class="type-rock type-fire"><img src="https://cdn.bulbagarden.net/upload/thumb/0/0c/839Coalossal.png/96px-839Coalossal.png" alt="Coalossal" title="Coalossal"></span>
+<span class="type-grass type-dragon category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/c/cc/840Applin.png/96px-840Applin.png" alt="Applin" title="Applin"></span>
+<span class="type-grass type-dragon category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/0/01/841Flapple.png/96px-841Flapple.png" alt="Flapple" title="Flapple"></span>
+<span class="type-grass type-dragon category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/3/36/842Appletun.png/96px-842Appletun.png" alt="Appletun" title="Appletun"></span>
+<span class="type-ground category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/b/b5/843Silicobra.png/96px-843Silicobra.png" alt="Silicobra" title="Silicobra"></span>
+<span class="type-ground category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/1/11/844Sandaconda.png/96px-844Sandaconda.png" alt="Sandaconda" title="Sandaconda"></span>
+<span class="type-flying type-water category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/f/f3/845Cramorant.png/96px-845Cramorant.png" alt="Cramorant" title="Cramorant"></span>
+<span class="type-water"><img src="https://cdn.bulbagarden.net/upload/thumb/a/a9/846Arrokuda.png/96px-846Arrokuda.png" alt="Arrokuda" title="Arrokuda"></span>
+<span class="type-water"><img src="https://cdn.bulbagarden.net/upload/thumb/d/d9/847Barraskewda.png/96px-847Barraskewda.png" alt="Barraskewda" title="Barraskewda"></span>
+<span class="type-electric type-poison category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/d/d5/848Toxel.png/96px-848Toxel.png" alt="Toxel" title="Toxel"></span>
+<span class="type-electric type-poison category-Idealista"><img src="https://cdn.bulbagarden.net/upload/thumb/d/d1/849Toxtricity-Low_Key.png/96px-849Toxtricity-Low_Key.png" alt="Toxtricity" title="Toxtricity"></span>
+<span class="type-fire type-bug category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/f/f2/850Sizzlipede.png/96px-850Sizzlipede.png" alt="Sizzlipede" title="Sizzlipede"></span>
+<span class="type-fire type-bug category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/ed/851Centiskorch.png/96px-851Centiskorch.png" alt="Centiskorch" title="Centiskorch"></span>
+<span class="type-fighting category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/4/4e/852Clobbopus.png/96px-852Clobbopus.png" alt="Clobbopus" title="Clobbopus"></span>
+<span class="type-fighting category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/c/c4/853Grapploct.png/96px-853Grapploct.png" alt="Grapploct" title="Grapploct"></span>
+<span class="type-ghost category-Scoprirovine category-Criminale"><img src="https://archives.bulbagarden.net/media/upload/thumb/0/06/854Sinistea_Dream.png/120px-854Sinistea_Dream.png" alt="Sinistea" title="Sinistea"></span>
+<span class="type-ghost"><img src="https://archives.bulbagarden.net/media/upload/thumb/a/a1/855Polteageist_Dream.png/120px-855Polteageist_Dream.png" alt="Polteageist" title="Polteageist"></span>
+<span class="type-psychic category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/8/8b/856Hatenna.png/96px-856Hatenna.png" alt="Hatenna" title="Hatenna"></span>
+<span class="type-psychic category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/1/19/857Hattrem.png/96px-857Hattrem.png" alt="Hattrem" title="Hattrem"></span>
+<span class="type-psychic type-fairy"><img src="https://cdn.bulbagarden.net/upload/thumb/1/10/858Hatterene.png/96px-858Hatterene.png" alt="Hatterene" title="Hatterene"></span>
+<span class="type-dark type-fairy category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/f/fb/859Impidimp.png/96px-859Impidimp.png" alt="Impidimp" title="Impidimp"></span>
+<span class="type-dark type-fairy category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/6/66/860Morgrem.png/96px-860Morgrem.png" alt="Morgrem" title="Morgrem"></span>
+<span class="type-dark type-fairy"><img src="https://cdn.bulbagarden.net/upload/thumb/6/67/861Grimmsnarl.png/96px-861Grimmsnarl.png" alt="Grimmsnarl" title="Grimmsnarl"></span>
+<span class="type-dark type-normal category-Idealista"><img src="https://cdn.bulbagarden.net/upload/thumb/0/08/862Obstagoon.png/96px-862Obstagoon.png" alt="Obstagoon" title="Obstagoon"></span>
+<span class="type-steel category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e0/863Perrserker.png/96px-863Perrserker.png" alt="Perrserker" title="Perrserker"></span>
+<span class="type-ghost"><img src="https://cdn.bulbagarden.net/upload/thumb/d/db/864Cursola.png/96px-864Cursola.png" alt="Cursola" title="Cursola"></span>
+<span class="type-fighting"><img src="https://cdn.bulbagarden.net/upload/thumb/3/38/865Sirfetch%27d.png/96px-865Sirfetch%27d.png" alt="Sirfetchd" title="Sirfetchd"></span>
+<span class="type-ice type-psychic"><img src="https://cdn.bulbagarden.net/upload/thumb/5/51/866Mr._Rime.png/96px-866Mr._Rime.png" alt="MrRime" title="MrRime"></span>
+<span class="type-ground type-ghost"><img src="https://cdn.bulbagarden.net/upload/thumb/7/71/867Runerigus.png/96px-867Runerigus.png" alt="Runerigus" title="Runerigus"></span>
+<span class="type-fairy category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/0/05/868Milcery.png/96px-868Milcery.png" alt="Milcery" title="Milcery"></span>
+<span class="type-fairy category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e0/869Alcremie.png/96px-869Alcremie.png" alt="Alcremie" title="Alcremie"></span>
+<span class="type-fighting category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/b/bb/870Falinks.png/96px-870Falinks.png" alt="Falinks" title="Falinks"></span>
+<span class="type-electric category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/1/11/871Pincurchin.png/96px-871Pincurchin.png" alt="Pincurchin" title="Pincurchin"></span>
+<span class="type-ice type-bug category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/f/f9/872Snom.png/96px-872Snom.png" alt="Snom" title="Snom"></span>
+<span class="type-ice type-bug category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/0/04/873Frosmoth.png/96px-873Frosmoth.png" alt="Frosmoth" title="Frosmoth"></span>
+<span class="type-rock category-Scoprirovine category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/6/60/874Stonjourner.png/96px-874Stonjourner.png" alt="Stonjourner" title="Stonjourner"></span>
+<span class="type-ice category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/9/9b/875Eiscue-Ice.png/96px-875Eiscue-Ice.png" alt="Eiscue" title="Eiscue"></span>
+<span class="type-psychic type-normal category-Allevapokemon category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/7/79/876Indeedee.png/96px-876Indeedee.png" alt="Indeedee" title="Indeedee"></span>
+<span class="type-electric type-dark category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/d/df/877Morpeko-Full.png/96px-877Morpeko-Full.png" alt="Morpeko" title="Morpeko"></span>
+<span class="type-steel category-Pokefan category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/5/56/878Cufant.png/96px-878Cufant.png" alt="Cufant" title="Cufant"></span>
+<span class="type-steel"><img src="https://cdn.bulbagarden.net/upload/thumb/7/76/879Copperajah.png/96px-879Copperajah.png" alt="Copperajah" title="Copperajah"></span>
+<span class="type-electric type-dragon category-Scoprirovine category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/9/91/880Dracozolt.png/96px-880Dracozolt.png" alt="Dracozolt" title="Dracozolt"></span>
+<span class="type-electric type-ice category-Scoprirovine category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/4/40/881Arctozolt.png/96px-881Arctozolt.png" alt="Arctozolt" title="Arctozolt"></span>
+<span class="type-water type-dragon category-Scoprirovine category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/1/16/882Dracovish.png/96px-882Dracovish.png" alt="Dracovish" title="Dracovish"></span>
+<span class="type-water type-ice category-Scoprirovine category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/0/03/883Arctovish.png/96px-883Arctovish.png" alt="Arctovish" title="Arctovish"></span>
+<span class="type-steel type-dragon category-Scienziato category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/3/38/884Duraludon.png/96px-884Duraludon.png" alt="Duraludon" title="Duraludon"></span>
+<span class="type-dragon type-ghost category-Pokefan category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/a/a9/885Dreepy.png/96px-885Dreepy.png" alt="Dreepy" title="Dreepy"></span>
+<span class="type-dragon type-ghost"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e1/886Drakloak.png/96px-886Drakloak.png" alt="Drakloak" title="Drakloak"></span>
+<span class="type-dragon type-ghost"><img src="https://cdn.bulbagarden.net/upload/thumb/f/f7/887Dragapult.png/96px-887Dragapult.png" alt="Dragapult" title="Dragapult"></span>
+<span class="type-fairy type-steel"><img src="https://cdn.bulbagarden.net/upload/thumb/c/ca/888Zacian.png/96px-888Zacian.png" alt="Zacian" title="Zacian"></span>
+<span class="type-fighting type-steel"><img src="https://cdn.bulbagarden.net/upload/thumb/7/72/889Zamazenta.png/96px-889Zamazenta.png" alt="Zamazenta" title="Zamazenta"></span>
+<span class="type-poison type-dragon"><img src="https://cdn.bulbagarden.net/upload/thumb/3/3b/HOME890.png/96px-HOME890.png" alt="Eternatus" title="Eternatus"></span>
+<span class="type-poison type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10033.png" alt="Venusaur-mega" title="Venusaur-mega"></span>
+<span class="type-dragon type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10034.png" alt="Charizard-mega-x" title="Charizard-mega-x"></span>
+<span class="type-flying type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10035.png" alt="Charizard-mega-y" title="Charizard-mega-y"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10036.png" alt="Blastoise-mega" title="Blastoise-mega"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10037.png" alt="Alakazam-mega" title="Alakazam-mega"></span>
+<span class="type-poison type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10038.png" alt="Gengar-mega" title="Gengar-mega"></span>
+<span class="type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10039.png" alt="Kangaskhan-mega" title="Kangaskhan-mega"></span>
+<span class="type-flying type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10040.png" alt="Pinsir-mega" title="Pinsir-mega"></span>
+<span class="type-dark type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10041.png" alt="Gyarados-mega" title="Gyarados-mega"></span>
+<span class="type-flying type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10042.png" alt="Aerodactyl-mega" title="Aerodactyl-mega"></span>
+<span class="type-fighting type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10043.png" alt="Mewtwo-mega-x" title="Mewtwo-mega-x"></span>
+<span class="type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10044.png" alt="Mewtwo-mega-y" title="Mewtwo-mega-y"></span>
+<span class="type-dragon type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10045.png" alt="Ampharos-mega" title="Ampharos-mega"></span>
+<span class="type-steel type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10046.png" alt="Scizor-mega" title="Scizor-mega"></span>
+<span class="type-fighting type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10047.png" alt="Heracross-mega" title="Heracross-mega"></span>
+<span class="type-fire type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10048.png" alt="Houndoom-mega" title="Houndoom-mega"></span>
+<span class="type-dark type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10049.png" alt="Tyranitar-mega" title="Tyranitar-mega"></span>
+<span class="type-fighting type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10050.png" alt="Blaziken-mega" title="Blaziken-mega"></span>
+<span class="type-fairy type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10051.png" alt="Gardevoir-mega" title="Gardevoir-mega"></span>
+<span class="type-fairy type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10052.png" alt="Mawile-mega" title="Mawile-mega"></span>
+<span class="type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10053.png" alt="Aggron-mega" title="Aggron-mega"></span>
+<span class="type-psychic type-fighting"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10054.png" alt="Medicham-mega" title="Medicham-mega"></span>
+<span class="type-electric"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10055.png" alt="Manectric-mega" title="Manectric-mega"></span>
+<span class="type-ghost"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10056.png" alt="Banette-mega" title="Banette-mega"></span>
+<span class="type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10057.png" alt="Absol-mega" title="Absol-mega"></span>
+<span class="type-ground type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10058.png" alt="Garchomp-mega" title="Garchomp-mega"></span>
+<span class="type-steel type-fighting"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10059.png" alt="Lucario-mega" title="Lucario-mega"></span>
+<span class="type-ice type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10060.png" alt="Abomasnow-mega" title="Abomasnow-mega"></span>
+<span class="type-fairy"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10061.png" alt="Floette-eternal" title="Floette-eternal"></span>
+<span class="type-psychic type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10062.png" alt="Latias-mega" title="Latias-mega"></span>
+<span class="type-psychic type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10063.png" alt="Latios-mega" title="Latios-mega"></span>
+<span class="type-ground type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10064.png" alt="Swampert-mega" title="Swampert-mega"></span>
+<span class="type-dragon type-grass"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10065.png" alt="Sceptile-mega" title="Sceptile-mega"></span>
+<span class="type-ghost type-dark"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10066.png" alt="Sableye-mega" title="Sableye-mega"></span>
+<span class="type-fairy type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10067.png" alt="Altaria-mega" title="Altaria-mega"></span>
+<span class="type-fighting type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10068.png" alt="Gallade-mega" title="Gallade-mega"></span>
+<span class="type-fairy type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10069.png" alt="Audino-mega" title="Audino-mega"></span>
+<span class="type-dark type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10070.png" alt="Sharpedo-mega" title="Sharpedo-mega"></span>
+<span class="type-psychic type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10071.png" alt="Slowbro-mega" title="Slowbro-mega"></span>
+<span class="type-ground type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10072.png" alt="Steelix-mega" title="Steelix-mega"></span>
+<span class="type-flying type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10073.png" alt="Pidgeot-mega" title="Pidgeot-mega"></span>
+<span class="type-ice"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10074.png" alt="Glalie-mega" title="Glalie-mega"></span>
+<span class="type-fairy type-rock"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10075.png" alt="Diancie-mega" title="Diancie-mega"></span>
+<span class="type-psychic type-steel"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10076.png" alt="Metagross-mega" title="Metagross-mega"></span>
+<span class="type-water"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10077.png" alt="Kyogre-primal" title="Kyogre-primal"></span>
+<span class="type-fire type-ground"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10078.png" alt="Groudon-primal" title="Groudon-primal"></span>
+<span class="type-flying type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10079.png" alt="Rayquaza-mega" title="Rayquaza-mega"></span>
+<span class="type-dark type-psychic"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10086.png" alt="Hoopa-unbound" title="Hoopa-unbound"></span>
+<span class="type-ground type-fire"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10087.png" alt="Camerupt-mega" title="Camerupt-mega"></span>
+<span class="type-fighting type-normal"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10088.png" alt="Lopunny-mega" title="Lopunny-mega"></span>
+<span class="type-flying type-dragon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10089.png" alt="Salamence-mega" title="Salamence-mega"></span>
+<span class="type-poison type-bug"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10090.png" alt="Beedrill-mega" title="Beedrill-mega"></span>
+<span class="type-normal type-dark category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/9/91/019Rattata-Alola.png/110px-019Rattata-Alola.png" alt="Rattata-alola" title="Rattata-alola"></span>
+<span class="type-normal type-dark category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/7/71/020Raticate-Alola.png/96px-020Raticate-Alola.png" alt="Raticate-alola" title="Raticate-alola"></span>
+<span class="type-psychic type-electric category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/3/3a/026Raichu-Alola.png/96px-026Raichu-Alola.png" alt="Raichu-alola" title="Raichu-alola"></span>
+<span class="type-steel type-ice category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/c/c9/027Sandshrew-Alola.png/96px-027Sandshrew-Alola.png" alt="Sandshrew-alola" title="Sandshrew-alola"></span>
+<span class="type-steel type-ice category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/b/bd/028Sandslash-Alola.png/96px-028Sandslash-Alola.png" alt="Sandslash-alola" title="Sandslash-alola"></span>
+<span class="type-ice category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/3/35/037Vulpix-Alola.png/96px-037Vulpix-Alola.png" alt="Vulpix-alola" title="Vulpix-alola"></span>
+<span class="type-fairy type-ice category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/2/26/038Ninetales-Alola.png/96px-038Ninetales-Alola.png" alt="Ninetales-alola" title="Ninetales-alola"></span>
+<span class="type-steel type-ground category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/1/10/050Diglett-Alola.png/110px-050Diglett-Alola.png" alt="Diglett-alola" title="Diglett-alola"></span>
+<span class="type-steel type-ground category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/2/22/051Dugtrio-Alola.png/96px-051Dugtrio-Alola.png" alt="Dugtrio-alola" title="Dugtrio-alola"></span>
+<span class="type-dark category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e3/052Meowth-Alola.png/110px-052Meowth-Alola.png" alt="Meowth-alola" title="Meowth-alola"></span>
+<span class="type-dark category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/8/80/053Persian-Alola.png/96px-053Persian-Alola.png" alt="Persian-alola" title="Persian-alola"></span>
+<span class="type-electric type-rock category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/4/43/074Geodude-Alola.png/110px-074Geodude-Alola.png" alt="Geodude-alola" title="Geodude-alola"></span>
+<span class="type-electric type-rock category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/6/62/075Graveler-Alola.png/96px-075Graveler-Alola.png" alt="Graveler-alola" title="Graveler-alola"></span>
+<span class="type-electric type-rock"><img src="https://cdn.bulbagarden.net/upload/thumb/0/07/076Golem-Alola.png/96px-076Golem-Alola.png" alt="Golem-alola" title="Golem-alola"></span>
+<span class="type-dark type-poison category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e0/088Grimer-Alola.png/110px-088Grimer-Alola.png" alt="Grimer-alola" title="Grimer-alola"></span>
+<span class="type-dark type-poison category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/1/15/089Muk-Alola.png/96px-089Muk-Alola.png" alt="Muk-alola" title="Muk-alola"></span>
+<span class="type-dragon type-grass category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/7/74/103Exeggutor-Alola.png/110px-103Exeggutor-Alola.png" alt="Exeggutor-alola" title="Exeggutor-alola"></span>
+<span class="type-ghost type-fire category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/0/06/105Marowak-Alola.png/110px-105Marowak-Alola.png" alt="Marowak-alola" title="Marowak-alola"></span>
+<span class="type-steel category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/0/09/052Meowth-Galar.png/96px-052Meowth-Galar.png" alt="Meowth-galar" title="Meowth-galar"></span>
+<span class="type-psychic category-Allevapokemon category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/9/92/077Ponyta-Galar.png/96px-077Ponyta-Galar.png" alt="Ponyta-galar" title="Ponyta-galar"></span>
+<span class="type-psychic type-fairy"><img src="https://cdn.bulbagarden.net/upload/thumb/e/e0/078Rapidash-Galar.png/96px-078Rapidash-Galar.png" alt="Rapidash-galar" title="Rapidash-galar"></span>
+<span class="type-psychic type-water category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/9/9f/079Slowpoke-Galar.png/96px-079Slowpoke-Galar.png" alt="Slowpoke-galar" title="Slowpoke-galar"></span>
+<span class="type-normal type-flying category-Idealista category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/7/7d/083Farfetch%27d-Galar.png/96px-083Farfetch%27d-Galar.png" alt="Farfetchd-galar" title="Farfetchd-galar"></span>
+<span class="type-poison type-fairy category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/3/38/110Weezing-Galar.png/96px-110Weezing-Galar.png" alt="Weezing-galar" title="Weezing-galar"></span>
+<span class="type-ice type-psychic category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/d/d1/122Mr._Mime-Galar.png/96px-122Mr._Mime-Galar.png" alt="MrMime-galar" title="MrMime-galar"></span>
+<span class="type-ghost category-Idealista category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/c/ce/222Corsola-Galar.png/96px-222Corsola-Galar.png" alt="Corsola-galar" title="Corsola-galar"></span>
+<span class="type-dark type-normal category-Idealista category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/b/b0/263Zigzagoon-Galar.png/96px-263Zigzagoon-Galar.png" alt="Zigzagoon-galar" title="Zigzagoon-galar"></span>
+<span class="type-dark type-normal"><img src="https://cdn.bulbagarden.net/upload/thumb/8/8e/264Linoone-Galar.png/96px-264Linoone-Galar.png" alt="Linoone-galar" title="Linoone-galar"></span>
+<span class="type-ice category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/c/c9/554Darumaka-Galar.png/96px-554Darumaka-Galar.png" alt="Darumaka-galar" title="Darumaka-galar"></span>
+<span class="type-ice category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/6/60/555Darmanitan-Galar.png/96px-555Darmanitan-Galar.png" alt="Darmanitan-galar" title="Darmanitan-galar"></span>
+<span class="type-ground type-ghost category-Scoprirovine category-Criminale"><img src="https://cdn.bulbagarden.net/upload/thumb/4/46/562Yamask-Galar.png/96px-562Yamask-Galar.png" alt="Yamask-galar" title="Yamask-galar"></span>
+<span class="type-ground type-steel category-Tutti"><img src="https://cdn.bulbagarden.net/upload/thumb/1/11/618Stunfisk-Galar.png/96px-618Stunfisk-Galar.png" alt="Stunfisk-galar" title="Stunfisk-galar"></span>
